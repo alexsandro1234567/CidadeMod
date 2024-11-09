@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "minecraft:block/stone",
+    "top": "vehicle:block/engine",
+    "front": "cidademod:block/workshop"
+  }
+} 
