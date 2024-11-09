@@ -1,6 +1,6 @@
 package com.exemplo.cidademod.building.garage;
 
-import net.minecraft.core.BlockPos;
+import net.minecraft.util.math.BlockPos;
 
 public class ServiceArea {
     private final BlockPos position;

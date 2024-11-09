@@ -1,12 +1,11 @@
 package com.exemplo.cidademod.building;
 
 import com.exemplo.cidademod.gui.BuildingSelectionGui;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUseContext;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.block.BlockState;
 
 public class BuildingWand extends Item {
     public BuildingWand(Properties props) {
@@ -14,12 +13,12 @@ public class BuildingWand extends Item {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context) {
-        if (context.getLevel().isClientSide()) {
+    public ActionResultType useOn(ItemUseContext context) {
+        if (context.getWorld().isClientSide()) {
             // Abre GUI de seleção de construção
-            Minecraft.getInstance().setScreen(new BuildingSelectionGui());
-            return InteractionResult.SUCCESS;
+            context.getPlayer().openScreen(new BuildingSelectionGui());
+            return ActionResultType.SUCCESS;
         }
-        return InteractionResult.CONSUME;
+        return ActionResultType.CONSUME;
     }
 } 

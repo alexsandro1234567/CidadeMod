@@ -1,6 +1,6 @@
 package com.exemplo.cidademod.building;
 
-import net.minecraft.world.level.block.Block;
+import net.minecraft.block.Block;
 import java.util.HashMap;
 import java.util.Map;
 

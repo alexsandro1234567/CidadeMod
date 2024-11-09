@@ -3,9 +3,9 @@ package com.exemplo.cidademod.gui;
 import com.exemplo.cidademod.building.BuildingSystem;
 import com.exemplo.cidademod.building.BuildingTemplate;
 import com.exemplo.cidademod.mode.BuildingMode;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class BuildingGui extends Screen {
     private int selected = -1;
     
     public BuildingGui() {
-        super(Component.literal("Construção"));
+        super(ITextComponent.literal("Construção"));
         this.availableBuildings = BuildingSystem.getAvailableTemplates();
     }
     
@@ -27,7 +27,7 @@ public class BuildingGui extends Screen {
             final int index = i;
             
             this.addRenderableWidget(new Button(width / 2 - 100, y, 200, 20,
-                Component.literal(template.getName()), button -> {
+                ITextComponent.literal(template.getName()), button -> {
                     selected = index;
                     minecraft.setScreen(null);
                     // Inicia modo de construção

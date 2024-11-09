@@ -1,6 +1,6 @@
 package com.exemplo.cidademod.economy;
 
-import net.minecraft.world.item.Item;
+import net.minecraft.item.Item;
 import java.util.HashMap;
 import java.util.Map;
 
